@@ -4,3 +4,8 @@ classes
 build
 .idea
 .env
+gradle/
+.gradle
+*.swp
+tmp
+gradlew*

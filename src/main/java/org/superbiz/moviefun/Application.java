@@ -31,7 +31,7 @@ public class Application {
     @Bean
     public BlobStore blobStore(
             ServiceCredentials serviceCredentials,
-            @Value("${s3.endpointUrl:#{null}}") String s3EndpointUrl
+            String s3EndpointUrl
     ) {
         String s3AccessKey = serviceCredentials.getCredential("moviefun-s3", "aws-s3", "access_key_id");
         String s3SecretKey = serviceCredentials.getCredential("moviefun-s3", "aws-s3", "secret_access_key");
