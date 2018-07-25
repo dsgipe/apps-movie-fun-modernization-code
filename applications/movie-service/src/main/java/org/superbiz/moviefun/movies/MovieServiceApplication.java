@@ -11,8 +11,5 @@ public class MovieServiceApplication {
         SpringApplication.run(MovieServiceApplication.class, args);
     }
 
-    @Bean
-    public ServletRegistrationBean actionServletRegistration(MovieServlet movieServlet) {
-        return new ServletRegistrationBean(movieServlet, "/moviefun/*");
-    }
+
 }

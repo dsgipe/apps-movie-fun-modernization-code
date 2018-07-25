@@ -10,9 +10,9 @@ public class AlbumsClient {
     private final RestOperations restOperations;
     private final String albumServerEndpoint;
 
-    public AlbumsClient(String movieServerEndpoint,RestOperations restOperations) {
+    public AlbumsClient(String albumServerEndpoint,RestOperations restOperations) {
         this.restOperations = restOperations;
-        this.albumServerEndpoint = movieServerEndpoint;
+        this.albumServerEndpoint = albumServerEndpoint;
     }
 
     public void addAlbum(AlbumInfo album) {
