@@ -1,20 +1,29 @@
 ---
 memory: 1G
 instances: 1
+services:
+- movie-fun-sso
 applications:
 - name: album-service
   path: applications/album-service/build/libs/album-service-1.1.0-SNAPSHOT.jar
+  env:
+    GRANT_TYPE: client_credentials
   services:
   - album-database
   - moviefun-s3
+  random-route: true
 - name: movie-service
   path: applications/movie-service/build/libs/movie-service-1.1.0-SNAPSHOT.jar
+  env:
+    GRANT_TYPE: client_credentials
   services:
   - movie-database
+  random-route: true
 - name: movie-fun-app
   path: applications/movie-fun-app/build/libs/movie-fun-app-1.1.0-SNAPSHOT.war
   services:
   - moviefun-s3
+  random-route: true
   env:
-    ALBUMS_URL: http://album-service.cfapps-02.haas-66.pez.pivotal.io/albums
-    MOVIES_URL: http://movie-service.cfapps-02.haas-66.pez.pivotal.io/movies
+    ALBUMS_URL: https://album-service-humble-platypus.apps.pikes.pal.pivotal.io/albums
+    MOVIES_URL: https://movie-service-smart-otter.apps.pikes.pal.pivotal.io/movies

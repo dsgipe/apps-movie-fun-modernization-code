@@ -1,4 +1,5 @@
 apply from: "../../java.gradle"
+apply from: "../../application.gradle"
 
 apply plugin: "org.springframework.boot"
 apply plugin: "war"
@@ -18,6 +19,11 @@ dependencies {
     compile "javax.servlet:jstl:1.2"
 
     compile "org.apache.tomcat.embed:tomcat-embed-jasper:8.5.6"
+
+    compile "org.springframework.cloud:spring-cloud-starter-oauth2"
+    compile "io.pivotal.spring.cloud:spring-cloud-sso-connector:$springCloudSsoVersion"
+    compile "org.springframework.security:spring-security-taglibs:$springSecurityVersion"
+
 
     testCompile "junit:junit:$junitVersion"
 }

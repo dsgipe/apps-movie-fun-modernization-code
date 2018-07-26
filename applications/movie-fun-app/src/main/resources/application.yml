@@ -13,6 +13,11 @@ s3:
   bucketName: <name of the bucket>
 
 albums:
-  url: http://localhost:8081/albums
+  url: http://localhost:8084/albums
 movies:
   url: http://localhost:8082/movies
+
+security:
+  basic:
+    enabled: false
+
